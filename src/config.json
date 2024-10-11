@@ -1,0 +1,25 @@
+{
+    "General": {
+        "tenant": "<tenant-name>",
+        "domain": "identitynow",
+        "sdkVersion": "1.4.3",
+        "logFileName": "log",
+        "logLevel": 3
+    },
+    "Authentication": {
+        "<tenant-name>": {
+            "clientID": "<client-id>",
+            "clientSecret": "<client-secret-encrypted>"
+        }
+    },
+    "Script": {
+        "sourceId": "<source-id-delimited-file-source>",
+        "applicationName": "<application-name-without-[source]>",
+        "actions": {
+            "emailScript": "emailScript.ps1",
+            "homeDriveScript": "homeDriveScript.ps1",
+            "terminationScript": "terminationScript.ps1",
+            "template": "template.ps1"
+        }
+    }
+}
