@@ -1,0 +1,227 @@
+{
+  "version": 1,
+  "timestamp": "2024-09-25T15:51:55.930117Z",
+  "tenant": "devrel-ga-10930",
+  "description": "Export Task Manager Source",
+  "options": {
+    "excludeTypes": null,
+    "includeTypes": [
+      "SOURCE"
+    ],
+    "objectOptions": {
+      "SOURCE": {
+        "includedNames": [],
+        "includedIds": [
+          "59d3a3a65fb54b3193fb2949df0a3bf7"
+        ]
+      }
+    }
+  },
+  "objects": [
+    {
+      "version": 1,
+      "self": {
+        "id": "59d3a3a65fb54b3193fb2949df0a3bf7",
+        "type": "SOURCE",
+        "name": "PowerShell Task Manager"
+      },
+      "object": {
+        "id": "59d3a3a65fb54b3193fb2949df0a3bf7",
+        "name": "PowerShell Task Manager",
+        "type": "DelimitedFile",
+        "connectorClass": "sailpoint.connector.delimitedfile.DelimitedFileConnector",
+        "connectorScriptName": "delimited-file-angularsc",
+        "description": "PowerShell Task Manager",
+        "deleteThreshold": 100,
+        "provisionAsCsv": true,
+        "owner": {
+          "type": "IDENTITY",
+          "id": "d64c614e3c554957b88a6b6f041649fd",
+          "name": "braden.cariaga"
+        },
+        "features": [
+          "DIRECT_PERMISSIONS",
+          "NO_RANDOM_ACCESS",
+          "DISCOVER_SCHEMA"
+        ],
+        "schemas": [
+          {
+            "nativeObjectType": "User",
+            "identityAttribute": "id",
+            "displayAttribute": "id",
+            "hierarchyAttribute": null,
+            "includePermissions": false,
+            "features": [],
+            "configuration": {},
+            "attributes": [
+              {
+                "name": "id",
+                "type": "STRING",
+                "schema": null,
+                "description": "The unique ID for the account",
+                "isMulti": false,
+                "isEntitlement": false,
+                "isGroup": false
+              },
+              {
+                "name": "actions",
+                "type": "STRING",
+                "schema": {
+                  "type": "CONNECTOR_SCHEMA",
+                  "id": "d4a9764dc3924eccaa8f2b7818dc507d",
+                  "name": "action"
+                },
+                "description": "actions",
+                "isMulti": true,
+                "isEntitlement": true,
+                "isGroup": true
+              },
+              {
+                "name": "statuses",
+                "type": "STRING",
+                "schema": null,
+                "description": "statuses",
+                "isMulti": true,
+                "isEntitlement": false,
+                "isGroup": false
+              },
+              {
+                "name": "transactions",
+                "type": "STRING",
+                "schema": null,
+                "description": "transactions",
+                "isMulti": true,
+                "isEntitlement": false,
+                "isGroup": false
+              },
+              {
+                "name": "errors",
+                "type": "STRING",
+                "schema": null,
+                "description": "errors",
+                "isMulti": true,
+                "isEntitlement": false,
+                "isGroup": false
+              }
+            ],
+            "id": "e29672d5ab89409884dd32f62270715d",
+            "name": "account",
+            "created": "2024-08-20T16:04:35.482Z",
+            "modified": "2024-09-25T15:51:17.686Z"
+          },
+          {
+            "nativeObjectType": "Group",
+            "identityAttribute": "name",
+            "displayAttribute": "name",
+            "hierarchyAttribute": null,
+            "includePermissions": false,
+            "features": [],
+            "configuration": {},
+            "attributes": [
+              {
+                "name": "name",
+                "type": "STRING",
+                "schema": null,
+                "description": "The name of the account - typically groupname etc.",
+                "isMulti": false,
+                "isEntitlement": false,
+                "isGroup": false
+              }
+            ],
+            "id": "d4a9764dc3924eccaa8f2b7818dc507d",
+            "name": "action",
+            "created": "2024-09-25T15:50:44.993Z",
+            "modified": "2024-09-25T15:51:07.149Z"
+          }
+        ],
+        "connectorAttributes": {
+          "mergeColumns": [
+            "actions",
+            "statuses",
+            "transactions",
+            "errors"
+          ],
+          "group.mergeRows": false,
+          "group.delimiter": ",",
+          "mergeRows": true,
+          "group.filetransport": "local",
+          "partitionMode": "disabled",
+          "connectionType": "file",
+          "group.host": "local",
+          "delimiter": ",",
+          "host": "local",
+          "indexColumns": [
+            "id"
+          ],
+          "commentCharacter": "#",
+          "action.columnNames": [
+            "name"
+          ],
+          "hasHeader": true,
+          "filterEmptyRecords": true,
+          "filetransport": "local",
+          "deleteThresholdPercentage": 100,
+          "group.filterEmptyRecords": true,
+          "group.hasHeader": true,
+          "action.mergeRows": false,
+          "group.partitionMode": "disabled",
+          "isSortedByIndexColumn": false,
+          "labels": [
+            "standard"
+          ],
+          "group.columnNames": [
+            "name"
+          ],
+          "templateApplication": "DelimitedFile Template",
+          "indexColumn": "id",
+          "healthy": true,
+          "cloudDisplayName": "PowerShell Task Manager",
+          "connectorName": "Delimited File",
+          "cloudOriginalApplicationType": "Delimited File",
+          "since": "2024-08-22T19:38:51.662Z",
+          "status": "SOURCE_STATE_HEALTHY"
+        },
+        "correlationConfigDetails": {
+          "attributeAssignments": [
+            {
+              "complex": false,
+              "property": "uid",
+              "operation": "EQ",
+              "value": "id",
+              "ignoreCase": true,
+              "matchMode": null,
+              "filterString": null
+            }
+          ],
+          "name": "BC Test Queue Delimited [source] Account Correlation",
+          "id": "e605eb2a44274497bed24b27012d9368"
+        },
+        "managerCorrelationMapping": null,
+        "provisioningPolicies": [
+          {
+            "name": "Create Policy",
+            "description": "Create Policy",
+            "usageType": "CREATE",
+            "fields": [
+              {
+                "name": "id",
+                "transform": {
+                  "type": "identityAttribute",
+                  "attributes": {
+                    "name": "uid"
+                  }
+                },
+                "attributes": {},
+                "isRequired": false,
+                "type": "string",
+                "isMultiValued": false
+              }
+            ]
+          }
+        ],
+        "managementWorkgroup": null,
+        "passwordPolicies": null
+      }
+    }
+  ]
+}
