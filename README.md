@@ -13,7 +13,7 @@
 [contributors-url]:https://github.com/sailpoint-oss/repo-template/graphs/contributors
 
 # ISC PowerShell Task Manager
-[Explore the docs »](https://your-link-to-colab-topic-here)
+[Explore the docs »]([https://your-link-to-colab-topic-here](https://developer.sailpoint.com/discuss/t/isc-powershell-task-manager/85533))
 
 [New to the CoLab? Click here »](https://developer.sailpoint.com/discuss/t/about-the-sailpoint-developer-community-colab/11230)
 
@@ -38,4 +38,4 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- CONTACT -->
 ## Discuss
-[Click Here](https://developer.sailpoint.com/dicuss/tag/{tagName}) to discuss this tool with other users.
+[Click Here](https://developer.sailpoint.com/dicuss/tag/identity-security-cloud) to discuss this tool with other users.
