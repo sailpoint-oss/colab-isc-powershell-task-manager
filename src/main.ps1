@@ -119,6 +119,12 @@ $runtime = Measure-Command -Expression {
                         }
                     }
 
+                    # Prevent execution on a remove when a user doesn't have an account.
+                    if ($operation -eq "Remove") { 
+                        Write-Log "The user doesn't have an account, but a work item for removal of an action was caught."
+                        continue
+                    }
+
                     $start = (Get-Date).toString("MM-dd-yyyy HH:mm:ss")
                     # Load Run-Action method from script.
                     [void] (. "$($script:SCRIPT_PATH)\scripts\$($script:GLOBAL_CONFIG.Script.actions."$action")")
